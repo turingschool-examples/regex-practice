@@ -1,4 +1,4 @@
-ENTHUSIASM_WORDS = ['wow', 'yay', 'yeah', 'omg', 'kittens']
+ENTHUSIASM_WORDS = ['wow', 'yay', 'yeah', 'omg', 'kittens', 'puppies']
 
 class EnthusiasmService
 
@@ -18,6 +18,18 @@ class EnthusiasmService
     joined_enthusiasm_words = ENTHUSIASM_WORDS.join('|')
     regex = Regexp.new(joined_enthusiasm_words, 'i')
     @text_content.scan(regex).size
+  end
+
+  def capslock_count
+    @text_content.scan(/\b[A-Z]+\b/).size
+  end
+
+  def exclamatory_sentences
+    @text_content.scan(/.\!( |$)/).size
+  end
+
+  def instances_multiple_exclamation_points
+    @text_content.scan(/(!!+)/).size
   end
 
   private

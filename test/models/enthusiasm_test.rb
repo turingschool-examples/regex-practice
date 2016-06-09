@@ -31,7 +31,6 @@ class EnthusiasmServiceTest < ActiveSupport::TestCase
   end
 
   test "it counts how many words are in all caps" do
-    skip
     page_text = 'email goes to webmaster - NOT to FABIO!'
     params = { text: page_text }
     enthusiasm = EnthusiasmService.new(params)
@@ -47,7 +46,6 @@ class EnthusiasmServiceTest < ActiveSupport::TestCase
   end
 
   test "it counts sentences ending in exclamation points" do
-    skip
     page_text = 'WOW! The fans are into these!!!'
     params = { text: page_text }
     enthusiasm = EnthusiasmService.new(params)
@@ -55,8 +53,7 @@ class EnthusiasmServiceTest < ActiveSupport::TestCase
   end
 
   test "it counts instances of multiple exclamation points" do
-    skip
-    page_text = 'WOW! The fans are into these!!!'
+    page_text = 'WOW! The fans are into these!!! Yay!'
     params = { text: page_text }
     enthusiasm = EnthusiasmService.new(params)
     assert_equal(1, enthusiasm.instances_multiple_exclamation_points)
