@@ -30,7 +30,7 @@ class ScrapeController < ApplicationController
   def tswift
     {
       name: 'Taylor Swift',
-      links:  ["http://www.taylorswiftweb.net/", "http://taylorswiftfanclubofficial.webs.com/", "https://medium.com/@mikedao"]
+      links:  ["http://taylorswiftfanclubofficial.webs.com/", "https://medium.com/@mikedao"]
     }
   end
 end

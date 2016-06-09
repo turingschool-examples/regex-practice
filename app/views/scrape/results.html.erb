@@ -11,6 +11,9 @@
         <li> Enthusiasm Link: <%= link_to e.link, e.link %> </li>
         <li> Number of <%=@name%>s: <%= e.name_count(@name) %> </li>
         <li> Usage of Known Enthusasm Words: <%= e.usage_of_known_enthusiastic_words %> </li>
+        <li> Number of Caps Locked Words: <%= e.capslock_count rescue 'Unknown' %></li>
+        <li> Number of Exclamatory Sentences: <%= e.exclamatory_sentences rescue 'Unknown' %></li>
+        <li> Instances of Multiple Explanation Points: <%= e.instances_multiple_exclamation_points rescue 'Unknown' %></li>
       </ul>
       <br />
     <% end %>
