@@ -2,9 +2,10 @@ ENTHUSIASM_WORDS = ['wow', 'yay', 'yeah', 'omg', 'kittens']
 
 class EnthusiasmService
 
-  attr_reader :text_content, :link
+  attr_reader :text_content, :link, :sample_text
 
   def initialize(params)
+    @sample_text = params[:sample_text]
     @link = params[:link]
     @text_content =  @link ? scrape_text(@link) : params[:text]
   end
@@ -22,7 +23,11 @@ class EnthusiasmService
   private
 
   def scrape_text(link)
-    html = Nokogiri::HTML(open(link))
-    html.at('body').inner_text.gsub(/\n/,"")
+    begin
+      html = Nokogiri::HTML(open(link))
+      text = html.at('body').inner_text.gsub(/\n/,"")
+    rescue
+      @sample_text || ''
+    end
   end
 end
