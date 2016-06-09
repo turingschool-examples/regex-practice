@@ -1,27 +1,14 @@
 <header>
   <nav>
-    <ul>
-      <li>Devotion to <%= @name %></li>
-    </ul>
+    <h1> Devotion to Person </h1>
   </nav>
 </header>
 
 <section class="container">
-  <aside class="secondary-content">
-    <ul>
-     <li>How many times is <%= @name %> mentioned?</li>
-     <li>How enthusiastic is the website?</li>
-      <li>Enthusiastic words? 'wow, etc'</li>
-      <li>How many words are in all caps</li>
-      <li>How many sentences end in exclamation points?</li>
-      <li>How many times are multiple exclamation points used?</li>
-    </ul>
-  </aside>
-
   <article class="main-content">
     <% @enthusiasms.each do |e| %>
       <ul>
-        <li> Enthusiasm Link: <%= e.link %> </li>
+        <li> Enthusiasm Link: <%= link_to e.link, e.link %> </li>
         <li> Number of <%=@name%>s: <%= e.name_count(@name) %> </li>
         <li> Usage of Known Enthusasm Words: <%= e.usage_of_known_enthusiastic_words %> </li>
       </ul>
@@ -31,5 +18,5 @@
 </section>
 
 <footer>
-  <p>Footer Content</p>
+  <p><%= link_to 'Redo', '/' %></p>
 </footer>
