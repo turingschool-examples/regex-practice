@@ -1,0 +1,27 @@
+<header>
+  <nav>
+    <ul>
+      <li>Devotion to Person</li>
+    </ul>
+  </nav>
+</header>
+
+<section class="container">
+  <aside class="secondary-content">
+    <ul>
+     <li>How many times Person is mentioned?</li>
+     <li>How enthusiastic is the website?</li>
+      <li>Enthusiastic words? 'wow, etc'</li>
+      <li>How many words are in all caps</li>
+      <li>How many sentences end in exclamation points?</li>
+      <li>How many times are multiple exclamation points used?</li>
+    </ul>
+  </aside>
+
+  <article class="main-content">
+    <td>
+      <%= link_to "Fabio", :controller => "scrape", :action => "results", :person=> "Fabio" %>
+      <%= link_to "TSwift", :controller => "scrape", :action => "results", :person=> "Taylor Swift" %>
+    </td>
+  </article>
+</section>
